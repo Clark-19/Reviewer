@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "reviewers"
+    label: "Reviewers"
+    folder: "content/reviewers"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Subjects"
+        name: "subjects"
+        widget: "list"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - label: "Lessons"
+            name: "lessons"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "YouTube Link", name: "youtubeLink", widget: "string" }
+              - { label: "Has Test", name: "hasTest", widget: "boolean", default: true }
